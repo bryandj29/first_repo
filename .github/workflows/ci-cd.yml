@@ -32,8 +32,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/mi-aplicacion .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/mi-aplicacion
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}//newapp .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}//newapp
 
       # - name: Deploy to Google Cloud Run
       #   run: |
@@ -42,3 +42,6 @@ jobs:
       #       --platform managed \
       #       --region southamerica-east1 \
       #       --allow-unauthenticated
+
+
+      
