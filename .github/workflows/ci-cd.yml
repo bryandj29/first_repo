@@ -32,8 +32,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v1 .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v1
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/newapp:$(date +%s) .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/newapp:$(date +%s)
 
       # - name: Deploy to Google Cloud Run
       #   run: |
