@@ -32,8 +32,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2 .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v3 .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v3
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v1
@@ -46,7 +46,7 @@ jobs:
       - name: Deploy to Google Cloud Run
         run: |
           gcloud run deploy hola-mundo \
-            --image docker.io/${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2 \
+            --image docker.io/${{ secrets.DOCKERHUB_USERNAME }}/newapp:v3 \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
             --project ${{ secrets.GCP_PROJECT_ID }} \
