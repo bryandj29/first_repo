@@ -46,7 +46,7 @@ jobs:
       - name: Deploy to Google Cloud Run
         run: |
           gcloud run deploy hola-mundo \
-            --image gcr.io/${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2 \
+            --image docker.io/${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2 \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
             --project ${{ secrets.GCP_PROJECT_ID }} \
