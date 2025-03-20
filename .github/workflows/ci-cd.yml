@@ -35,6 +35,14 @@ jobs:
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2 .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2
 
+      - name: Authenticate to Google Cloud
+        run: |
+           uses: google-github-actions/auth@v1
+           with:
+           credentials_json: ${{ secrets.GCP_SA_KEY }}
+        
+      
+      
       - name: Deploy to Google Cloud Run
         run: |
           gcloud run deploy hola-mundo \
