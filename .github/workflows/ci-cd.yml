@@ -40,7 +40,8 @@ jobs:
           gcloud run deploy hola-mundo \
             --image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/newapp:v2 \
             --platform managed \
-            --region southamerica-east1 \
+            --region ${{ secrets.GCP_REGION }} \
+            --project ${{ secrets.GCP_PROJECT_ID }} \
             --allow-unauthenticated
 
 
