@@ -35,13 +35,13 @@ jobs:
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2 .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/newapp:v2
 
-      # - name: Deploy to Google Cloud Run
-      #   run: |
-      #     gcloud run deploy mi-aplicacion \
-      #       --image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/mi-aplicacion \
-      #       --platform managed \
-      #       --region southamerica-east1 \
-      #       --allow-unauthenticated
+      - name: Deploy to Google Cloud Run
+        run: |
+          gcloud run deploy hola-mundo \
+            --image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/newapp:v2 \
+            --platform managed \
+            --region southamerica-east1 \
+            --allow-unauthenticated
 
 
       
