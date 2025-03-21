@@ -53,6 +53,7 @@ Descripción de enfoque de conteinerización
 - Se subió a Dockerhub con "docker push miusuario/newapp:vx"
 
 Detalles del pipeline CI/CD
+
 1-El pipeline de CI/CD fue configurado en GitHub Actions para automatizar la construcción y despliegue de la aplicación. Se compone de los siguientes pasos:
 - El trigger del pipeline se activa automáticamente al hacer un push a la rama main.
 
