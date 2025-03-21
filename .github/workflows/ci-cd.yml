@@ -49,7 +49,7 @@ jobs:
 
       - name: Authenticate to Google Cloud
         run: |
-          gcloud run services update hola-mundo --region ${{ secrets.GCP_REGION }} --allow-unauthenticated
+          gcloud run services update-traffic hola-mundo --platform managed --region ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }} --allow-unauthenticated --to-latest
       
       - name: Show url
         run: |
