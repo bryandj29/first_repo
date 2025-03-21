@@ -77,7 +77,9 @@ https://hola-mundo-812867724533.southamerica-east1.run.app/version
 
 Desafío que enfrete:
 1-El primer desafío que enfreté fue tener que decidir que nube usar ya que las sugeridas no las domino y termine eligiendo al proveedor mas conocido GCP, esto conllevó a que por mi corta o casi nula experiencia en esa nube pase mas tiempo investigando como hacer las cosa que haciendolas.
+
 2-El segundo desafío importante fue desplegar la app como servicio web de acceso público, luego de desplegar varias veces la app con distintos valores el resultado siempre era el mismo. Hasta que a ultima hora del jueves pude encontrar un documento que explicaba que el usuario que despliega una app en Cloud Run debe ser Administrador o Propietario para poder darle los permisos de acceso público sin autorización.
+
 3-Desafío poder terminar de documentar todo para tenerlo listo y entregarlo el viernes a primera hora.
 
 Sugerencias para mejorar este despliegue para un entorno de producción:
