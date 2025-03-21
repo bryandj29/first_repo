@@ -56,5 +56,6 @@ jobs:
       - name: Show url
         run: |
           SERVICES_URL=$(gcloud run services describe hola-mundo --platform managed --region ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }} --format 'value(status.url)')
+          echo "The URL is $SERVICES_URL"
 
       
