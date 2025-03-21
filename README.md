@@ -11,5 +11,5 @@ en el puerto 5000(puerto que usa flask por defecto) pero luego se modifico y se 
 ![image](https://github.com/user-attachments/assets/02bc52a7-56dc-4dcf-b1dd-0454e1a93b70)
 ![image](https://github.com/user-attachments/assets/9e576e8d-4736-43c9-b697-0b5c47a27e11)
 
-La tercera etapa del desafio esta estrechamente relacionada con la cuarta y quinta etapa. Se pedia armar un Pipelne usando Github Actions para automatizar el procosedo de Dockerizar la App, subirla a DockerHub y luego desplegarla en mi proveedor cloud y todo esto deba ocurrir de forma automatica cada vez que yo hago un push a la rama principal "main". 
+La tercera etapa del desafio esta estrechamente relacionada con la cuarta y quinta etapa. Se pedia armar un Pipelne usando Github Actions para automatizar el proceso de Dockerizar la App, subirla a DockerHub y luego desplegarla en mi proveedor cloud y todo esto debia ocurrir de forma automatica cada vez que yo hago un push a la rama principal "main". 
 Para poder realizar esta parte del desafio tuve que investigar un poco ya que no tengo mucha experiencia en las nubes sugeridas lo cual me llevo algo de tiempo. Lo primero que hice fue armar un repositorio en Github, conectarlo con DockerHub y guardar las credenciales en los secret de github asi no queda ninguna dato sensible hardcodeado en el repositorio. Luege creer un archivo llamado ci-cd.yml 
