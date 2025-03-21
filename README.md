@@ -65,7 +65,10 @@ Detalles del pipeline CI/CD
 3-Autenticación en Google Cloud:
 - Se usa "google-github-actions/auth" para autenticarse en GCP usando una cuenta de servicio.
 
-4-Despliegue en Google Cloud Run:
+4-Verificar que no haya una App igual desplegada:
+- En caso de que exista una App hola-mundo desplegada la elimina y de forma automatica y silenciosa y levanta la nueva que le estamos pasando.
+
+5-Despliegue en Google Cloud Run:
 - Se usa "gcloud run deploy" para desplegar el servicio con la imagen actualizada.
 - Se configura --allow-unauthenticated para permitir acceso sin autenticación.
 
