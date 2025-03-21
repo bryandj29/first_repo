@@ -93,4 +93,4 @@ Sugerencias para mejorar este despliegue para un entorno de producción:
 - Definir una estrategia de escalado con min-instances para mejorar tiempos de respuesta
 - Agregar pruebas automatizadas con pytest por ejm.
 - Usar Secret Manager en GCP para almacenar credenciales y claves API en lugar de pasarlas como variables de entorno.
-- Considerar Cloud Build en lugar de GitHub Actions se se busca mayor integración con GCP reducción de costos en pipelines.
+- Considerar Cloud Build en lugar de GitHub Actions si se busca mayor integración con GCP reducción de costos en pipelines.
