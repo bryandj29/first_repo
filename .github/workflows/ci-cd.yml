@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+env:
+  SERVICE_NAME: hola-mundo
+  REGION: ${{ secrets.GCP_REGION }}
+  PROJECT: ${{ secrets.GCP_PROJECT_ID }}
+
 
 jobs:
   build:
@@ -42,13 +47,23 @@ jobs:
         
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
+
+      - name: Check if service exists and delete it
+        run: |
+          if gcloud run services describe "$SERVICE_NAME" --platform managed --region "$REGION" --project "$PROJECT" &>/dev/null; then
+            echo "Service $SERVICE_NAME exists. Deleting..."
+            gcloud run services delete "$SERVICE_NAME" --platform managed --region "$REGION" --project "$PROJECT" --quiet
+            echo "Service deleted."
+          else
+            echo "Service $SERVICE_NAME does not exist. Proceeding with deployment."
+          fi  
       
       - name: Deploy to Google Cloud Run
         run: |
-          gcloud run deploy hola-mundo  --image docker.io/${{ secrets.DOCKERHUB_USERNAME }}/newapp:v3 --platform managed --region ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }} --set-env-vars APP_VERSION=1.0.0 --allow-unauthenticated
+          gcloud run deploy "$SERVICE_NAME"  --image docker.io/${{ secrets.DOCKERHUB_USERNAME }}/newapp:v3 --platform managed --region ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }} --set-env-vars APP_VERSION=1.0.0 --allow-unauthenticated
 
-      - name: Show url
+      - name: Show URL
         run: |
-          SERVICES_URL=$(gcloud run services describe hola-mundo --platform managed --region ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }} --format 'value(status.url)')
+          SERVICES_URL=$(gcloud run services describe "$SERVICE_NAME" --platform managed --region "$REGION" --project "$PROJECT" --format 'value(status.url)')
           echo "The URL is $SERVICES_URL"
       

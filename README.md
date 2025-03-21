@@ -38,7 +38,7 @@ git push origin maim
 5-Verificar el deploy de la App
 - Ir a la consola de Google Cloud Run
 - Busca el servicio desplegado y copiar la URL publica para probar la App
-- Tambien se puede hacer desde la temrinal con el siguiente comando gcloud run services describe hola-mundo --region=southamerica-east1 --format='value(status.url)'
+- Tambien se puede hacer desde la temrinal con el siguiente comando "gcloud run services describe hola-mundo --region=southamerica-east1 --format='value(status.url)'"
 
 6-Como valor agregado se creo una variable de entorno llamda VERSION la cual nos muestra la version de la App si agregamos /version al final de la url.
 https://hola-mundo-812867724533.southamerica-east1.run.app/version
@@ -62,10 +62,10 @@ Detalles del pipeline CI/CD
 - Se sube la imagen a Docker Hub.
 
 3-Autenticación en Google Cloud:
-- Se usa google-github-actions/auth para autenticarse en GCP usando una cuenta de servicio.
+- Se usa "google-github-actions/auth" para autenticarse en GCP usando una cuenta de servicio.
 
 4-Despliegue en Google Cloud Run:
-- Se usa gcloud run deploy para desplegar el servicio con la imagen actualizada.
+- Se usa "gcloud run deploy" para desplegar el servicio con la imagen actualizada.
 - Se configura --allow-unauthenticated para permitir acceso sin autenticación.
 
 El resultado es un flujo automatizado en el que, al hacer cambios en el código y hacer un push, se genera una nueva imagen, se sube a Docker Hub y se despliega automáticamente en Google Cloud Run.
