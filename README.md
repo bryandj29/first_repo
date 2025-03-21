@@ -1,12 +1,12 @@
-Este documento nos ayudara a entender como se llevo a cabo el desafio. 
+El siguiente documento nos ayudara a entender como se llevo a cabo el desafio. 
 
 Lo primero que se realizo fue un analisis de la solicitud. en la cual se detallaba la necesidad de clonar un repositorio y hacerlo funcionar de forma local y exponerlo en el puerto 80 tal como se muestra en la siguiente imagen.
-(IMAGEN)
-(IMAGEN)
+![image](https://github.com/user-attachments/assets/02bc52a7-56dc-4dcf-b1dd-0454e1a93b70)
+![image](https://github.com/user-attachments/assets/bf2723ad-183d-4744-9182-75b4cc6e7b89)
 
 La segunda etapada de este desafio consitia en armar un contenedor con una App (sencilla) que ejecutara un "hola mundo y mi nombre"
-Para realizar esta tarea se uso flask, docker y python. Lo primero fue armar una pequeña app en python que al ejecutarla nos muestra un cartel "Hola mundo, soy Bryan Delgado" y lo expone 
-en el puerto 5000 pero luego se modifico y se le asigno el puerto 8080 ya que es el puerto por defecto de las url que usa gcloud run. Con docker build se construyo la imagen que primero seria probada de forma local como se muestra en la siguiente imagen y luego seria almacenada en mi repositorio de Docker Hub, mediante un push con nombre_usuario/appn_name:tag 
+Para realizar esta tarea se uso docker, flask y python. Lo primero fue armar una pequeña app en python que al ejecutarla nos muestra un cartel "Hola mundo, soy Bryan Delgado" y lo expone 
+en el puerto 5000(puerto que usa flask por defecto) pero luego se modifico y se le asigno el puerto 8080 ya que es el puerto por defecto de las url que usa gcloud run. Con docker build se construyo la imagen que primero seria probada de forma local como se muestra en la siguiente imagen y luego seria almacenada en mi repositorio de Docker Hub, mediante un push con nombre_usuario/appn_name:tag 
 (IMAGEN contenedor holamundo up local)
 (IMAGEN hola mundo from web)
 
