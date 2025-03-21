@@ -77,16 +77,16 @@ https://hola-mundo-812867724533.southamerica-east1.run.app/version
 
 Desafío que enfrete:
 
-1-El primer desafío que enfreté fue tener que decidir que nube usar ya que las sugeridas no las domino y termine eligiendo al proveedor mas conocido GCP, esto conllevó a que por mi corta o casi nula experiencia en esa nube pase mas tiempo investigando como hacer las cosa que haciendolas.
-2-El segundo desafío importante fue desplegar la app como servicio web de acceso público, luego de desplegar varias veces la app con distintos valores el resultado siempre era el mismo. Hasta que a ultima hora del jueves pude encontrar un documento que explicaba que el usuario que despliega una app en Cloud Run debe ser Administrador o Propietario para poder darle los permisos de acceso público sin autorización.
-3-Desafío poder terminar de documentar todo para tenerlo listo y entregarlo el viernes a primera hora.
+-El primer desafío que enfreté fue tener que decidir que nube usar ya que las sugeridas no las domino y termine eligiendo al proveedor mas conocido GCP, esto conllevó a que por mi corta o casi nula experiencia en esa nube pase mas tiempo investigando como hacer las cosa que haciendolas.
+-El segundo desafío importante fue desplegar la app como servicio web de acceso público, luego de desplegar varias veces la app con distintos valores el resultado siempre era el mismo. Hasta que a ultima hora del jueves pude encontrar un documento que explicaba que el usuario que despliega una app en Cloud Run debe ser Administrador o Propietario para poder darle los permisos de acceso público sin autorización.
+-Desafío poder terminar de documentar todo para tenerlo listo y entregarlo el viernes a primera hora.
 
 Sugerencias para mejorar este despliegue para un entorno de producción:
 
-1-Configurar autenticación en Google Cloud Run en lugar de permitir acceso público (--allow-unauthenticated).
-2-Eliminar archivos innecesarios con .dockerignore
-3-Excluir archivos innecesarios o sensibles con .gitignore
-4-Definir una estrategia de escalado con min-instances para mejorar tiempos de respuesta
-5-Agregar pruebas automatizadas con pytest por ejm.
-6-Usar Secret Manager en GCP para almacenar credenciales y claves API en lugar de pasarlas como variables de entorno.
-7-Considerar Cloud Build en lugar de GitHub Actions se se busca mayor integración con GCP reducción de costos en pipelines.
+-Configurar autenticación en Google Cloud Run en lugar de permitir acceso público (--allow-unauthenticated).
+-Eliminar archivos innecesarios con .dockerignore
+-Excluir archivos innecesarios o sensibles con .gitignore
+-Definir una estrategia de escalado con min-instances para mejorar tiempos de respuesta
+-Agregar pruebas automatizadas con pytest por ejm.
+-Usar Secret Manager en GCP para almacenar credenciales y claves API en lugar de pasarlas como variables de entorno.
+-Considerar Cloud Build en lugar de GitHub Actions se se busca mayor integración con GCP reducción de costos en pipelines.
