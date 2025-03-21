@@ -52,3 +52,6 @@ jobs:
           SERVICES_URL=$(gcloud run services describe hola-mundo --platform managed --region ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }} --format 'value(status.url)')
           echo "The URL is $SERVICES_URL"
       
+      - name: Add IAM policy binding
+        run: |
+          gcloud run services add-iam-policy-binding hola-mundo --platform managed --region ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }} --member=allUsers --role=roles/run.invoker
