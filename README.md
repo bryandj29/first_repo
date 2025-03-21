@@ -18,11 +18,11 @@ docker run -dp 80:80 docker/getting-started
 3-Configurar los Secrets en GitHub
 - Ir a Settings/Secrets and variables/Actions/New repository secrets
 - Se agregaron las siguentes variables secretas con sus respectivos valores
-DOCKERHUB_PASSWORD / mi usuario de docker hub
-DOCKERHUB_USERNAME / mi contraseña de docker hub
-GCP_PROJECT_ID / ID del proyecto
-GCP_REGION / Region donde se desplegara el servicio (en mi caso southamerica-east1)
-GOOGLE_CREDENTIALS / clave JSON de la cuenta de servicio de GCP
+ - DOCKERHUB_PASSWORD / mi usuario de docker hub
+ - DOCKERHUB_USERNAME / mi contraseña de docker hub
+ - GCP_PROJECT_ID / ID del proyecto
+ - GCP_REGION / Region donde se desplegara el servicio (en mi caso southamerica-east1)
+ - GOOGLE_CREDENTIALS / clave JSON de la cuenta de servicio de GCP
 
 4-Ejecutar el pipeline CI/CD
 - Hacer push de los cambios de la rama principal
@@ -50,7 +50,7 @@ Descripción de enfoque de conteinerización
 - Luego se configuro para que saliera por le puerto 8080 ya que el puerto por defecto que usa flask es el 5000.
 - Se uso la imagen base python:alpine3.21
 - Se copió la app.py dentro del contendor se compiló con "docker build -t miusuario/newapp:vx" y se probó localmente.
-- Se subió a Dockerhub con "docker push miusuario/newapp:v2"
+- Se subió a Dockerhub con "docker push miusuario/newapp:vx"
 
 Detalles del pipeline CI/CD
 1-El pipeline de CI/CD fue configurado en GitHub Actions para automatizar la construcción y despliegue de la aplicación. Se compone de los siguientes pasos:
